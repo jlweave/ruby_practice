@@ -1,0 +1,10 @@
+<h1><%= @chef.name %>'s Show Page</h1>
+<br>
+<p>Chef's name: <%= @chef.name %></p>
+<p>Dishes: <% @chef.dishes.each do |dish| %>
+<%= dish.name %>,
+<% end %></p>
+
+Ingredients Used: <%  @chef.ingredients.each do |ingredient|%>
+<%= link_to "#{ingredient.name}", chef_ingredients_path(@chef.id) %>
+<% end %>

@@ -1,0 +1,7 @@
+require 'rspec'
+require './lib/item'
+require './lib/auction'
+require './lib/attendee'
+require './item_spec'
+require './auction_spec'
+require './attendee_spec'

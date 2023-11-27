@@ -1,0 +1,12 @@
+<h1> Bulk Discount Edit Page </h1>
+
+<%= form_with model: @bd, url: merchant_bulk_discount_path(@merchant, @bd.id), method: :patch, local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :percentage %><br>
+  <%= f.number_field :percentage, min:0, max:100 %><br>
+  <%= f.label :threshold, "Threshold" %><br>
+  <%= f.number_field :threshold, min: 1  %><br><br>
+  <%= f.submit "Submit Updated Discount"%>
+<% end %>
+

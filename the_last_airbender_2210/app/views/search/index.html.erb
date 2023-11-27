@@ -1,0 +1,18 @@
+<h1>Total Number of <%= @nation_search %>'s members is <%= @nations.size %></h1>
+<% @nations.each do |nation| %>
+
+  <section class= "member">
+    <p class="name">
+    Member Name: <%= nation[0][:name] %>
+    </p>
+    <p class="allies">
+    Allies Name: <%= nation[0][:allies] %>
+    </p>
+    <p class="enemies">
+    Enemies Name: <%= nation[0][:enemies] %>
+    </p>
+    <p class="affiliations">
+    Affiliations: <%= nation[0][:affiliations] %>
+    </p>
+    </section>
+<% end %>

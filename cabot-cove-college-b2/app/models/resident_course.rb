@@ -1,0 +1,3 @@
+class ResidentCourse < ApplicationRecord
+
+end
