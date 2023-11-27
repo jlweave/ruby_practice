@@ -1,0 +1,33 @@
+<h1> <%= @user.name %>'s Dashboard  </h1>
+
+<%= form_with url: user_discoveries_path(@user.id), method: :get, local: true do |f| %>
+  <%= f.submit "Discover Movies" %>
+<% end %>
+
+<section id="viewing_parties">
+  <p hidden> test </p>
+  <% if @user.view_parties != [] %>
+    <% @movies.each do |movie| %>
+      <section id="id_<%= movie.id %>">
+        <p><%= movie.title %></p>
+        <section id="<%= movie.id %>_party_guests">
+          <p>Guests:</p>
+          <ul>
+            <% @party_guests.each do |guest| %>
+              <li><%= guest %></li>
+            <% end %>
+          </ul>
+        </section>
+      </section>
+    <% end %>
+  <% end %>
+</section>
+<% @user.view_parties.each do |party| %><br>
+<img crossorigin="anonymous" scr= "http://image.tmdb.org/t/p/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg" width="300" height="300" >
+  <a href="http://image.tmdb.org/t/p/w500/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg">...</a>
+  <p>Party's Date: <%= party.date %></p>
+  <p>Start Time: <%= party.time %></p>
+  <p>Party's Length(in mins): <%= party.duration %></p> 
+  <p>Party's Host: <%= @user.name %></p>
+<% end %> 
+
